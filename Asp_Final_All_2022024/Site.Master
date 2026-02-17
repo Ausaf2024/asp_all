@@ -1,0 +1,73 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Asp_Final_All_2022024.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asp_Final_All</title>
+    <style>
+        li{
+           float:left;
+          }
+        ul{
+           list-style-type:none;
+           padding:0;
+           margin:0;
+            overflow:hidden;
+            background-color:red;
+           }
+        li a{
+            display:block;
+             color:black;
+             text-align:center;
+            padding:14px 14px;
+            text-decoration:none;
+            cursor:pointer;
+           }
+       li a : hover{
+            background-color:black;
+            color:white;
+           }
+        .active{
+            background-color:forestgreen;
+           }
+
+        footer{
+            background-color:red;
+            padding:0;
+            margin:0;
+            overflow:hidden;
+
+        }
+</style>
+</head>
+<body>
+    <form runat="server">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+            
+                    <ul>
+                     <li><a href="Default.aspx" >Home</a></li>    
+                     <li><a href="About.aspx">About</a></li>  
+                     <li><a href="Contact.aspx">Contact</a></li>  
+                    <%-- <li style="float:right; color:red;"><a >Login</a></li>--%>
+                     <li style="float:right;"><a >Logout</a></li> 
+                     <li style="float:right;"><a><input type="text" placeholder="Search..."/></a></li>
+                   </ul>
+
+        </nav>
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer style="text-align:center">
+                <p>&copy; <%: DateTime.Now.Year %> - My ASP_Final_All.NET Application</p>
+            </footer>
+        </div>
+    </form>
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/Scripts/bootstrap.js") %>
+    </asp:PlaceHolder>
+</body>
+</html>
